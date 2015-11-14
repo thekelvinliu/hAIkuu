@@ -2,6 +2,8 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,500);
 @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
 /*========================================================
 						Includes
 =========================================================*/
@@ -259,6 +261,15 @@ q + .img {
   border-radius: 2px;
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.41);
 }
+.lander {
+  position: relative;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 60px;
+  line-height: 22px;
+  font-weight: light;
+  text-align: center;
+}
 @media (max-width: 767px) {
   .btn {
     display: block;
@@ -390,7 +401,7 @@ header * + .row {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e647413c', endColorstr='#e647413c');
   zoom: 1;
 }
-.top-panel .container {
+.top-panel .tier {
   text-align: center;
 }
 /*==================== Brand ====================*/
