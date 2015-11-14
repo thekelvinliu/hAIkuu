@@ -32,6 +32,8 @@ def get_associations(seed, size=8):
     else:
         return None
 
+def match(): pass
+
 def generate(seed):
     """Returns a haiku based on a seed list"""
     words = get_associations(seed)
