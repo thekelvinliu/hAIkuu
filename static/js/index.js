@@ -15,9 +15,9 @@ $( document ).ready(function() {
 			})
 			.success(function (data) {
 				 $.ajax({
-				  url: "/haiku",
+				  url: window.location.href + "haiku",
 				  type: "post",
-				  data: {keywords : data.results[0].results.tag.classes}
+				  data: {keywords : data.results[0].result.tag.classes}
 				})
 				.success(function (data) {
 				 console.log(data)
