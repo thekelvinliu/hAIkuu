@@ -18,7 +18,6 @@ $( document ).ready(function() {
 				  url: window.location.href + "haiku",
 				  type: "post",
 				  data: JSON.stringify({"keywords" : data.results[0].result.tag.classes}),
-				  dataType: "json",
 				  contentType : "application/json; charset=utf-8"
 				})
 				.success(function (data) {
