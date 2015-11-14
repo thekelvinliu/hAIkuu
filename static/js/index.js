@@ -17,7 +17,9 @@ $( document ).ready(function() {
 				 $.ajax({
 				  url: window.location.href + "haiku",
 				  type: "post",
-				  data: {keywords : data.results[0].result.tag.classes}
+				  data: JSON.stringify({"keywords" : data.results[0].result.tag.classes}),
+				  dataType: "json",
+				  contentType : "application/json; charset=utf-8"
 				})
 				.success(function (data) {
 				 console.log(data)
