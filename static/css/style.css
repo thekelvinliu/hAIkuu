@@ -287,14 +287,14 @@ q + .img {
   text-align: center;
   font-size: 65px;
   color: #ffffff;
-  background: #d44934;
+  background: #125688;
   border-radius: 50%;
 }
 .icon__bg-2 {
-  background: #fbb953;
+  background: #3b5998;
 }
 .icon__bg-3 {
-  background: #c5db34;
+  background: #00aced;
 }
 /*==================== Img ====================*/
 .img {
@@ -483,7 +483,7 @@ footer {
   font-size: 35px;
   line-height: 30px;
   font-weight: 700;
-  color: #ffffff;
+  color: #909086;
   overflow: hidden;
   padding: 0 0 4px;
 }
