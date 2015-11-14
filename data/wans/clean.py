@@ -12,6 +12,8 @@ for f in os.listdir('.'):
                 if line[0] == '<':
                     continue
                 k, v = line.split(', ')[:2]
+                if k == 'a' or v == 'a':
+                    continue
                 k = k.lower()
                 v = v.lower()
                 if data.get(k) is None:
