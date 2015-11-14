@@ -4,11 +4,16 @@ from __future__ import print_function
 import json
 import os.path
 from random import sample
+import sys
 
 PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
 
-with open(os.path.join(PATH, 'wans/cue_target_pairs.json')) as fin:
-    wan_graph = json.load(fin)
+try:
+    with open(os.path.join(PATH, 'wans/cue_target_pairs.json')) as fin:
+        wan_graph = json.load(fin)
+except IOError as e:
+    print('cue_target_pairs.json not found -- please generate with wan_json.sh')
+    sys.exit(1)
 
 def wan_walk(seed, steps=3):
     """Returns a word related to the seed word."""
@@ -27,5 +32,7 @@ def get_associations(seed, size=8):
     else:
         return None
 
-def generate(lst):
-    return 'haiku is here'
+def generate(seed):
+    """Returns a haiku based on a seed list"""
+    words = get_associations(seed)
+    return ', '.join(words) if words is not None else None
