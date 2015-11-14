@@ -1,0 +1,20 @@
+#coca files
+w2c.txt
+w2c.zip
+w3c.txt
+w3c.zip
+w4c.txt
+w4c.zip
+w5c.txt
+w5c.zip
+
+#generated files
+*.json
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
