@@ -16,7 +16,7 @@ def index():
 def haiku():
     if request.method == 'POST':
         payload = request.get_json()
-        if payload['keywords'] is not None:
+        if payload.get('keywords') is not None:
             for word in payload['keywords']:
                 haiku = data.generate(word)
                 if haiku is not None:
