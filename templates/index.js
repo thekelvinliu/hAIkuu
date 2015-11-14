@@ -15,7 +15,7 @@ $( document ).ready(function() {
 			  headers: {authorization: "Bearer UhaCGlZ2mOM34YkXSYQaWeGbgb8qRc"},
 			  url: "https://api.clarifai.com/v1/tag",
 			  type: "post",
-			  data: {encoded_image:base64Img.substring(base64Img.indexOf(","))}
+			  data: {encoded_image:base64Img.substring(base64Img.indexOf(",") + 1)}
 			})
 			.success(function (data) {
 			 console.log(data)
