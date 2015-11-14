@@ -220,7 +220,7 @@ q + .img {
 }
 .parallax01 {
   background-color: #FFF;
-  background-image: url(../images/parallax01.jpg);
+  background-image: url(/static/img/parallax01.jpg);
   padding: 210px 0 187px;
 }
 @media (max-width: 767px) {

@@ -1,35 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <!-- META -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <title>Haiku</title>
+        <title>hAIkuu</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grid.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
         <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="index.js"></script>
-
-        <style type="text/css">
-        #mainDiv
-        {
-            position: absolute;
-            height: auto;
-        }
-
-        </style>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-migrate-1.2.1.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/device.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/facebook.js') }}"></script>
     </head>
-    <body background="Cherry Blossom.jpg">
-        <div class="container" id="mainDiv">
-            <div class="jumbotron">
-              <h1>Hello, world!</h1>
-              <img id="outputImage" style="display:hidden"></img>
-              <input id="inputImage" type="file" accept="image/*" capture="camera"></input> 
-            </div>
-        </div><!-- mainDiv -->
+    <body>
+        <div class="page">
+            <!--==============================HEADER==============================-->
+            <header>
+                <section class="parallax parallax01">
+                    <div class="top-panel">
+                        <div class="container">
+                            <div class="brand">
+                                <h1 class="brand_name"><a href="/">hAIkuu</a></h1>
+                                <p class="brand_slogan">Artificial Intelligence</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h2>Never Have Dull Captions Again.</h2>
+                        <p><em>AI, NLP, and Computer Vision. To Generate Haikus.</em></p>
+                        <div class="row">
+                            <img id="outputImage" style="display:hidden"></img>
+                      <input id="inputImage" type="file" accept="image/*" capture="camera"></input>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </header>
+
+            <!--==============================CONTENT==============================-->
+            <main>
+                <section class="well center">
+                    <div class="container">
+                        <h2>About Our App</h2>
+                        <p>You've just snapped the most artistic, stunning photo yet. <br>
+                            After applying Valencia on Instagram, you realize you have one problem:
+                            You don't have an artistic caption to go with it. Hipsters fear no more!!!
+                            hAIkuu sees and interprets your image, and uses in-house AI natural language processing algorithms to craft deep haikus that your artsy friends can't possibly criticize.</p>
+                        <div class="row iconed-list">
+                            <div class="grid_4">
+                                <div class="icon fa-coffee"></div>
+                                <h3>Local Menus</h3>
+                                <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                            <div class="grid_4">
+                                <div class="icon fa-glass icon__bg-2"></div>
+                                <h3>Daily Specials</h3>
+                                <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                            <div class="grid_4">
+                                <div class="icon fa-cutlery icon__bg-3"></div>
+                                <h3>Private Dining</h3>
+                                <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        <script src="js/script.js"></script>
     </body>
 </html>
