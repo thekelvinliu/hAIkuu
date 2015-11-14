@@ -37,7 +37,7 @@ def wan_walk(seed, steps=3):
 def get_associations(seed, size=8):
     """Returns a list of size words related to a seed word."""
     if wan_graph.get(seed) is not None:
-        return [wan_walk(seed) for i in xrange(size)]
+        return [wan_walk(seed) for i in range(size)]
     else:
         return None
 
