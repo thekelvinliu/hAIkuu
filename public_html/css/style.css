@@ -1,0 +1,498 @@
+@import "animate.css";
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+/*========================================================
+						Includes
+=========================================================*/
+/*========================================================
+					  Main Styles
+=========================================================*/
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #707068;
+  background: #47413c;
+  -webkit-text-size-adjust: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #584a3e;
+}
+h2 {
+  font-size: 45px;
+  line-height: 62px;
+  font-weight: 400;
+}
+@media (max-width: 767px) {
+  h2 {
+    font-size: 38px;
+    line-height: 50px;
+  }
+}
+h3 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: 400;
+}
+@media (max-width: 979px) {
+  h3 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+h4 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #d2c970;
+}
+h5 {
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #d2c970;
+}
+p a:hover {
+  text-decoration: underline;
+}
+a {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+a:active {
+  background: transparent;
+}
+a:focus {
+  outline: none;
+}
+a[href^="tel:"] {
+  color: inherit;
+  text-decoration: none;
+}
+.fa {
+  line-height: inherit;
+}
+[class*='fa-']:before {
+  font-weight: 400;
+  font-family: 'FontAwesome';
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.page {
+  overflow: hidden;
+  min-height: 500px;
+}
+.lt-ie9 .page {
+  min-width: 1200px;
+}
+/*=======================================================
+                       Main Layout
+=========================================================*/
+* + h2 {
+  margin-top: 50px;
+}
+* + h3 {
+  margin-top: 40px;
+}
+* + h4 {
+  margin-top: 30px;
+}
+* + h5 {
+  margin-top: 20px;
+}
+* + h6 {
+  margin-top: 20px;
+}
+.icon + h3 {
+  margin-top: 24px;
+}
+.img + h5 {
+  margin-top: 26px;
+}
+* + p {
+  margin-top: 15px;
+}
+h2 + p {
+  margin-top: 22px;
+}
+h3 + p {
+  margin-top: 14px;
+}
+h4 + p {
+  margin-top: 15px;
+}
+* + .row {
+  margin-top: 39px;
+}
+h2 + .row {
+  margin-top: 30px;
+}
+.row + .row {
+  margin-top: 26px;
+}
+.row + .offset02 {
+  margin-top: 36px;
+}
+* + .img {
+  margin-top: 20px;
+}
+q + .img {
+  margin-top: 30px;
+}
+* + .btn {
+  margin-top: 39px;
+}
+* + .footer-brand {
+  margin-top: 16px;
+}
+* + .copyright {
+  margin-top: 16px;
+}
+/*=======================================================
+						Components
+=========================================================*/
+/*==================     ToTop     ======================*/
+.toTop {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  line-height: 40px;
+  color: #fff;
+  background: #dd6f5e;
+  position: fixed;
+  right: 66px;
+  bottom: 180px;
+  display: none;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  z-index: 20;
+}
+.toTop:hover {
+  color: #fff;
+  background: #fccd85;
+  text-decoration: none;
+}
+@media only screen and (max-width: 1399px) {
+  .toTop {
+    display: none !important;
+  }
+}
+/*==================   Parallax    ======================*/
+.parallax {
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+.mobile .parallax,
+.tablet .parallax {
+  background-position: 50% 0 !important;
+}
+.parallax h1,
+.parallax h2,
+.parallax h4,
+.parallax h6 {
+  color: #ffffff;
+}
+.parallax01 {
+  background-color: #FFF;
+  background-image: url(../images/parallax01.jpg);
+  padding: 210px 0 187px;
+}
+@media (max-width: 767px) {
+  .parallax01 {
+    padding: 160px 0 120px;
+  }
+}
+.parallax02 {
+  background-color: #FFF;
+  background-image: url(../images/parallax02.jpg);
+  padding: 78px 0 106px;
+}
+@media (max-width: 767px) {
+  .parallax02 {
+    padding: 60px 0 80px;
+  }
+}
+@media (max-width: 767px) {
+  .parallax {
+    background-position: center 0 !important;
+  }
+}
+/*==================== Btn ====================*/
+.btn {
+  position: relative;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  padding: 15px 98px 14px;
+  background: #d44934;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.41);
+}
+@media (max-width: 767px) {
+  .btn {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .btn {
+    padding: 15px 0 14px;
+  }
+}
+.btn:hover {
+  background: #b03725;
+  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+}
+.btn:active {
+  background: #862a1c;
+  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
+}
+/*==================== Icon ====================*/
+.icon {
+  margin-left: auto;
+  margin-right: auto;
+  width: 105px;
+  height: 105px;
+  line-height: 105px;
+  text-align: center;
+  font-size: 65px;
+  color: #ffffff;
+  background: #d44934;
+  border-radius: 50%;
+}
+.icon__bg-2 {
+  background: #fbb953;
+}
+.icon__bg-3 {
+  background: #c5db34;
+}
+/*==================== Img ====================*/
+.img {
+  display: inline-block;
+  max-width: 100%;
+}
+.img__circle {
+  border-radius: 50%;
+  overflow: hidden;
+}
+/*==================== Iconed list ====================*/
+.iconed-list {
+  font-size: 14px;
+  line-height: 28px;
+}
+/*==================== Iconed box ====================*/
+.iconed-box {
+  position: relative;
+  text-align: left;
+  padding: 0 0 0 110px;
+}
+.iconed-box .icon {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 84px;
+  height: 84px;
+  line-height: 84px;
+  font-size: 50px;
+  background: #47413c;
+}
+.iconed-box .icon + * {
+  margin-top: 0;
+}
+/*==================== Quote ====================*/
+blockquote {
+  font-size: 14px;
+  line-height: 22px;
+}
+blockquote q {
+  display: block;
+  position: relative;
+  font-size: 24px;
+  line-height: 38px;
+  vertical-align: baseline;
+  text-indent: 16px;
+}
+blockquote q:before {
+  content: "“";
+  position: relative;
+  top: 47px;
+  left: -16px;
+  font-size: 94px;
+  color: #909086;
+}
+/*========================================================
+					 HEADER  Section
+=========================================================*/
+header {
+  position: relative;
+  color: #ffffff;
+  background: #f1f1e6;
+  text-align: center;
+}
+header h2 {
+  font-size: 56px;
+  line-height: 68px;
+}
+header em {
+  font-size: 34px;
+  line-height: 68px;
+  font-weight: 400;
+}
+header h2 + p {
+  margin-top: 0;
+}
+header * + .row {
+  margin-top: 43px;
+}
+/*==================== Top Panel ====================*/
+.top-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 19px 0 60px;
+  background: rgba(71, 65, 60, 0.9);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.lt-ie9 .top-panel {
+  background: none;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e647413c', endColorstr='#e647413c');
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e647413c', endColorstr='#e647413c');
+  zoom: 1;
+}
+.top-panel .container {
+  position: fixed;
+}
+/*==================== Brand ====================*/
+.brand {
+  font-family: 'Ubuntu', sans-serif;
+  display: inline-block;
+}
+.brand_name {
+  position: relative;
+  font-size: 35px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  overflow: hidden;
+  padding: 0 0 4px;
+}
+.brand_slogan {
+  font-size: 10px;
+  line-height: 18px;
+  font-weight: 300;
+  letter-spacing: 3.4px;
+  text-transform: uppercase;
+  color: #909086;
+  margin: 0;
+}
+/*========================================================
+					 CONTENT  Section
+=========================================================*/
+main {
+  display: block;
+  padding: 0 0 0 0;
+  background: #f1f1e6;
+  text-align: center;
+}
+/*==================== Well ====================*/
+.well {
+  padding: 59px 0 81px 0;
+}
+.well__02 {
+  padding: 90px 0 90px 0;
+}
+.well__03 {
+  padding: 67px 0 88px 0;
+}
+.well__04 {
+  padding: 103px 0 114px 0;
+}
+/*==================== Background ====================*/
+.bg-2 {
+  background: #47413c;
+  color: #909086;
+}
+.bg-2 h1,
+.bg-2 h2,
+.bg-2 h3,
+.bg-2 h4,
+.bg-2 h5,
+.bg-2 h6 {
+  color: #ffffff;
+}
+.bg-3 {
+  background: #fbfbfb;
+}
+/*==================== Offset ====================*/
+.offset01 {
+  margin-top: 14px;
+}
+/*==================== Shadow ====================*/
+.shadow {
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+/*========================================================
+					 FOOTER  Styles
+=========================================================*/
+footer {
+  text-align: center;
+  padding: 44px 0 40px;
+  font-size: 12px;
+  line-height: 25px;
+  box-shadow: inset 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+}
+/*==================== Footer Brand ====================*/
+.footer-brand {
+  display: inline-block;
+  font-family: 'Ubuntu', sans-serif;
+  color: #909086;
+}
+.footer-brand_name {
+  position: relative;
+  font-size: 35px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  overflow: hidden;
+  padding: 0 0 4px;
+}
+.footer-brand_slogan {
+  color: #909086;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  margin: 0;
+}
