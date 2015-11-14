@@ -1,9 +1,5 @@
 $( document ).ready(function() {
 
-	resizeDiv();
-	$( window ).resize(
-		resizeDiv
-		);
 	$("#inputImage").on("change", function () {
 		var file = document.getElementById("inputImage").files[0];
 		var blob_url = window.URL.createObjectURL(file);
@@ -24,16 +20,6 @@ $( document ).ready(function() {
 	})
 });
 
-var resizeDiv = function () {
-	$("#outputImage").css("width", $( window ).height()*0.5);
-	$("#mainDiv").height($( window ).height()*0.8)
-	$("#mainDiv").width($( window ).width()*0.8)
-	$("#mainDiv").css(
-		{
-			top: ($( window ).height()/2 - $("#mainDiv").height()/2), 
-			left: ($( window ).width()/2 - $("#mainDiv").width()/2)
-		});
-}
 
 var convertToDataURLviaCanvas = function (url, callback, outputFormat){
     var img = new Image();
