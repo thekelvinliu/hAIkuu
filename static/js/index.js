@@ -14,7 +14,14 @@ $( document ).ready(function() {
 			  data: {encoded_image:base64Img.substring(base64Img.indexOf(",") + 1)}
 			})
 			.success(function (data) {
-			 console.log(data)
+				 $.ajax({
+				  url: window.location.href + "haiku",
+				  type: "post",
+				  data: {keywords : data.results[0].result.tag.classes}
+				})
+				.success(function (data) {
+				 console.log(data)
+				})
 			})
 		});
 	})
