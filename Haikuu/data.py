@@ -18,8 +18,8 @@ except IOError as e:
 
 #ngrams
 try:
-    with open(os.path.join(PATH, 'coca/ngram_pos_map.json')) as fin:
-        ngram_pos = json.load(fin)
+    with open(os.path.join(PATH, 'coca/short.txt')) as fin:
+        ngrams = json.load(fin)
 except IOError as e:
     print('ngram_pos_map.json not found -- please generate with clean_grams.py')
     sys.exit(1)
@@ -43,10 +43,7 @@ def get_associations(seed, size=8):
 
 def get_ngram(word):
     """Returns an ngram which contains the given word."""
-    candidates = []
-    for k in ngram_pos.keys():
-        if word in set(k.split(' ')):
-            candidates.append(k)
+    candidates = [g for g in ngrams if word in set(g.split(' '))]
     return sample(candidates, 1)[0]
 
 def match(seed, words):
