@@ -1,37 +1,51 @@
+var wordlist = null;
+
 $( document ).ready(function() {
 
-	$("#inputImage").on("change", createHaiku);
-	$("#generate").on("click", createHaiku);
+    $("#inputImage").on("change", function () {
+        wordlist = null;
+        createHaiku();
+    });
+    $("#generate").on("click", createHaiku);
 });
 
 var createHaiku = function() {
-	var file = document.getElementById("inputImage").files[0];
-	var blob_url = window.URL.createObjectURL(file);
-	$("#outputImage").attr("src", blob_url);
-	$("#outputImage").css("width",300);
-	$("#outputImage").show();
-	convertToDataURLviaCanvas(blob_url, function(base64Img){
-		$("#loading").show();
-	    // Base64DataURL
-	    $.ajax({
-		  headers: {authorization: "Bearer UhaCGlZ2mOM34YkXSYQaWeGbgb8qRc"},
-		  url: "https://api.clarifai.com/v1/tag",
-		  type: "post",
-		  data: {encoded_image:base64Img.substring(base64Img.indexOf(",") + 1)}
-		})
-		.success(function (data) {
-			 $.ajax({
-			  url: window.location.href + "haiku",
-			  type: "post",
-			  data: JSON.stringify({"keywords" : data.results[0].result.tag.classes}),
-			  contentType : "application/json; charset=utf-8"
-			})
-			.success(function (data) {
-				$("#haiku").text(data);
-				$("#loading").hide();
-			})
-		})
-	});
+    if (wordlist == null) {
+        var file = document.getElementById("inputImage").files[0];
+        var blob_url = window.URL.createObjectURL(file);
+        $("#outputImage").attr("src", blob_url);
+        $("#outputImage").css("width",300);
+        $("#outputImage").show();
+        convertToDataURLviaCanvas(blob_url, function(base64Img){
+            $("#loading").show();
+            // Base64DataURL
+            $.ajax({
+              headers: {authorization: "Bearer UhaCGlZ2mOM34YkXSYQaWeGbgb8qRc"},
+              url: "https://api.clarifai.com/v1/tag",
+              type: "post",
+              data: {encoded_image:base64Img.substring(base64Img.indexOf(",") + 1)}
+            })
+            .success(function (data) {
+                 wordlist = data.results[0].result.tag.classes;
+                 generateHaiku(data);
+            })
+        });
+    } else {
+        generateHaiku(wordlist);
+    }
+}
+
+var generateHaiku = function (data) {
+    $.ajax({
+      url: window.location.href + "haiku",
+      type: "post",
+      data: JSON.stringify({"keywords" : data.results[0].result.tag.classes}),
+      contentType : "application/json; charset=utf-8"
+    })
+    .success(function (data) {
+        $("#haiku").text(data);
+        $("#loading").hide();
+    })
 }
 
 var convertToDataURLviaCanvas = function (url, callback, outputFormat){
@@ -44,7 +58,9 @@ var convertToDataURLviaCanvas = function (url, callback, outputFormat){
         canvas.height = this.height;
         canvas.width = this.width;
         ctx.drawImage(this, 0, 0);
-        canvas = downScaleCanvas(canvas, 0.3)
+        if (canvas.height > 400 || canvas.width > 400) {
+            canvas = downScaleCanvas(canvas, 0.3);
+        }
         dataURL = canvas.toDataURL(outputFormat);
         callback(dataURL);
         canvas = null; 
