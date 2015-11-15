@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <title>hAIkuu</title>
+        
         <!-- ICON -->
         <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -26,6 +27,8 @@
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.mousewheel.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.simplr.smoothscroll.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/hgen.js') }}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     </head>
     <body class="index">
         <div id="page-wrapper">
@@ -52,6 +55,15 @@
                             Upload an image, enter an image URL,</br> or use your own keyword below, and hAIkuu will start.
                         </div>
                     </section>
+                    <!-- Single button -->
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Default <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                      </ul>
+                    </div>
                     <!-- Main -->
                     <article id="main">
                         <header class="special container">
