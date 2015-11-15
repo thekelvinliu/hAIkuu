@@ -12,6 +12,7 @@ PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'data')
 try:
     with open(os.path.join(PATH, 'wans/cue_target_pairs.json')) as fin:
         wan_graph = json.load(fin)
+        print("graph loaded")
 except IOError as e:
     print('cue_target_pairs.json not found -- please generate with wan_json.sh')
     sys.exit(1)
@@ -20,6 +21,7 @@ except IOError as e:
 try:
     with open(os.path.join(PATH, 'coca/short.txt')) as fin:
         ngrams = [line.split(' ') for line in json.load(fin)]
+        print("ngrams loaded")
 except IOError as e:
     print('short.txt not found -- please generate with clean_grams.py')
     sys.exit(1)
