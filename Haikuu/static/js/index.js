@@ -20,7 +20,7 @@ var createHaiku = function() {
             $("#loading").show();
             // Base64DataURL
             $.ajax({
-              headers: {authorization: "Bearer 2BKdevklbfTHmeOa41YP7nksnIPcaL"},
+              headers: {authorization: "Bearer brwV2MxCkjH7J5Jai8gZ8JaxIHCdWT"},
               url: "https://api.clarifai.com/v1/tag",
               type: "post",
               data: {encoded_image:base64Img.substring(base64Img.indexOf(",") + 1)}
