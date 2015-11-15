@@ -1,40 +1,69 @@
 var wordlist = null;
 
 $( document ).ready(function() {
-
+    hideuploads();
     $("#inputImage").on("change", function () {
+        var file = document.getElementById("inputImage").files[0];
+        var blob_url = window.URL.createObjectURL(file);
+        $("#outputImage").attr("src", blob_url);
+        $("#outputImage").css("width",300);
+        $("#outputImage").show();
         wordlist = null;
-        createHaiku();
+        $("#generate").on("click", function() {
+            createHaiku(blob_url)
+        });
     });
-    $("#generate").on("click", createHaiku);
     $("#useURL").on("click", function () {
         var file = document.getElementById("inputImage").files[0];
         var blob_url = window.URL.createObjectURL(file);
         $("#outputImage").attr("src", $("#url").val());
         $("#outputImage").css("width",300);
         $("#outputImage").show();
-        $("#loading").show();
-        $.ajax({
-              headers: {authorization: "Bearer brwV2MxCkjH7J5Jai8gZ8JaxIHCdWT"},
-              url: "https://api.clarifai.com/v1/tag?url=" + $("#url").val(),
-              type: "get"
-            })
-            .success(function (data) {
-                 wordlist = data.results[0].result.tag.classes;
-                 generateHaiku(data);
-            })  
-    });
+        wordlist = null;
+        $("#generate").on("click", createHaikuURL);
+    }); 
+    $(".listbutton").on("click", function () {
+        hideuploads();
+        $(this.dataset.target).show();
+        if (this.dataset.target == "#wordUpload") {
+            $("#generate").on("click", function() {
+            createHaikuWords()
+            });
+        } else {
+            $("#imageWrapper").show();
+        }
+    })
 });
 
-var createHaiku = function() {
+var createHaikuWords = function () {
+    $("#loading").show();
+    wordlist = $("#keywordinput").val().split(",");
+    generateHaiku();
+}
+
+var createHaikuURL = function () {
+    $("#loading").show();
+    $.ajax({
+          headers: {authorization: "Bearer brwV2MxCkjH7J5Jai8gZ8JaxIHCdWT"},
+          url: "https://api.clarifai.com/v1/tag?url=" + $("#url").val(),
+          type: "get"
+        })
+        .success(function (data) {
+             wordlist = data.results[0].result.tag.classes;
+             generateHaiku(data);
+        })
+}
+var hideuploads = function () {
+    $("#imageUpload").hide();
+    $("#urlUpload").hide();
+    $("#wordUpload").hide();
+    $("#imageWrapper").hide();
+}
+
+var createHaiku = function(blob_url) {
+    $("#loading").show();
     if (wordlist == null) {
-        var file = document.getElementById("inputImage").files[0];
-        var blob_url = window.URL.createObjectURL(file);
-        $("#outputImage").attr("src", blob_url);
-        $("#outputImage").css("width",300);
-        $("#outputImage").show();
         convertToDataURLviaCanvas(blob_url, function(base64Img){
-            $("#loading").show();
             // Base64DataURL
             $.ajax({
               headers: {authorization: "Bearer brwV2MxCkjH7J5Jai8gZ8JaxIHCdWT"},
@@ -52,11 +81,11 @@ var createHaiku = function() {
     }
 }
 
-var generateHaiku = function (data) {
+var generateHaiku = function () {
     $.ajax({
       url: window.location.protocol + "//" + window.location.host + "/"+ "haiku",
       type: "post",
-      data: JSON.stringify({"keywords" : data.results[0].result.tag.classes}),
+      data: JSON.stringify({"keywords" : wordlist}),
       contentType : "application/json; charset=utf-8"
     })
     .success(function (data) {
