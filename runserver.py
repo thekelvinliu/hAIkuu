@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from os import environ
-from haikuu import app as application
+from Haikuu import app as application
 
 if __name__ == "__main__":
     application.debug = True
