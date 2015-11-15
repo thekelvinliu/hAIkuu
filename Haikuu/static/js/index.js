@@ -7,6 +7,23 @@ $( document ).ready(function() {
         createHaiku();
     });
     $("#generate").on("click", createHaiku);
+    $("#useURL").on("click", function () {
+        var file = document.getElementById("inputImage").files[0];
+        var blob_url = window.URL.createObjectURL(file);
+        $("#outputImage").attr("src", $("#url").val());
+        $("#outputImage").css("width",300);
+        $("#outputImage").show();
+        $("#loading").show();
+        $.ajax({
+              headers: {authorization: "Bearer brwV2MxCkjH7J5Jai8gZ8JaxIHCdWT"},
+              url: "https://api.clarifai.com/v1/tag?url=" + $("#url").val(),
+              type: "get"
+            })
+            .success(function (data) {
+                 wordlist = data.results[0].result.tag.classes;
+                 generateHaiku(data);
+            })  
+    });
 });
 
 var createHaiku = function() {
@@ -43,7 +60,7 @@ var generateHaiku = function (data) {
       contentType : "application/json; charset=utf-8"
     })
     .success(function (data) {
-        $("#haiku").text(data);
+        $("#haiku").html(data.split('/').join("<br />"));
         $("#loading").hide();
     })
 }
