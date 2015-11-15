@@ -1,5 +1,6 @@
 #!/use/bin/env python
 
+from __future__ import print_function
 import json
 from os import environ
 import MySQLdb
@@ -18,13 +19,14 @@ with open('./wans/cue_target_pairs.json') as fin:
     data = json.load(fin)
 with open('./coca/short.txt') as fin:
     ngrams = json.load(fin)
-
+with open('./done.txt') as fin:
+    done = set([l.strip() for l in fin.readlines()])
 #be comprehensive
 words = set(data.keys())
 for k in data.keys():
     for w in data[k]:
         words.add(w)
-list(words)
+words = list(words)
 print(len(words))
 print(len(ngrams))
 ngram_dict = {}
@@ -34,7 +36,9 @@ for g in ngrams:
 #start inserting
 while len(words):
     cw = words.pop()
-    print(cw)
+    if cw in done:
+        continue
+    print(len(words), cw)
     ins_lst = [POD.format(cw, k) for k in ngram_dict.keys()
                if cw in ngram_dict[k]]
     if len(ins_lst) == 0:
