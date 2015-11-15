@@ -40,6 +40,9 @@ var createHaikuWords = function () {
     $("#loading").show();
     $("#haiku").empty();
     wordlist = $("#keywordinput").val().split(",");
+    for (var i = 0; i < wordlist.length; i++) {
+        wordlist[i] = wordlist[i].toLowerCase().trim();
+    };
     generateHaiku();
 }
 
