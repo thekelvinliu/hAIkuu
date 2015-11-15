@@ -18,6 +18,14 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/user.css') }}">
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-migrate-1.2.1.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/device.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.rd-parallax.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.mousewheel.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.simplr.smoothscroll.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/hgen.js') }}"></script>
     </head>
     <body class="index">
         <div id="page-wrapper">
@@ -54,12 +62,11 @@
                             <input id="url" type="text" placeholder="enter image URL here">
                             <ul class="buttons vertical"> <li><button id ="useURL" type = "button" class="button fit scrolly">Use URL</a></li> </ul>
                         </header>
-                        <div id="haiku"></div>
                         <!-- One -->
                         <section class="wrapper style2 container special-alt">
                             <div class="row 50%">
                                 <div class="8u 12u(narrower)">
-                                    <header>
+                                    <header id="haiku">
                                         <h2>Behold the <strong>icons</strong> that visualize what you’re all about. or just take up space. your call bro.</h2>
                                     </header>
                                 </div>

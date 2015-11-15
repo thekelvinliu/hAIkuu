@@ -1783,7 +1783,7 @@
 	}
 
 		.image:before {
-			background: url(/static/img/overlay.png);
+			background: url(../img/overlay.png);
 			content: '';
 			height: 100%;
 			left: 0;
@@ -2107,7 +2107,7 @@
 
 		.wrapper.style2 {
 			background-color: #83d3c9;
-			background-image: url(/static/img/light-bl.svg), url(/static/img/light-br.svg);
+			background-image: url(../img/light-bl.svg), url(../img/light-br.svg);
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
 			background-size: 25em, 25em;
@@ -2395,7 +2395,7 @@
 	#banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url(/static/img/light-bl.svg), url(/static/img/light-br.svg), url(/static/img/overlay.png), url(../..//static/img/banner.jpg);
+		background-image: url(../img/light-bl.svg), url(../img/light-br.svg), url(../img/overlay.png), url(../img/banner.jpg);
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
@@ -2461,7 +2461,7 @@
 /* Main */
 
 	#main {
-		background-image: url(/static/img/dark-tl.svg), url(/static/img/dark-tr.svg), url(/static/img/dark-bl.svg), url(/static/img/dark-br.svg);
+		background-image: url(../img/dark-tl.svg), url(../img/dark-tr.svg), url(../img/dark-bl.svg), url(../img/dark-br.svg);
 		background-position: top left, top right, bottom left, bottom right;
 		background-repeat: no-repeat;
 		background-size: 25em;
@@ -2493,7 +2493,7 @@
 	#cta {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url(/static/img/light-tl.svg), url(/static/img/light-tr.svg), url(/static/img/overlay.png), url(../..//static/img/banner.jpg);
+		background-image: url(../img/light-tl.svg), url(../img/light-tr.svg), url(../img/overlay.png), url(../img/banner.jpg);
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;

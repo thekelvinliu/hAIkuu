@@ -54,7 +54,7 @@ var createHaiku = function() {
 
 var generateHaiku = function (data) {
     $.ajax({
-      url: window.location.href + "haiku",
+      url: window.location.protocol + "//" + window.location.host + "/"+ "haiku",
       type: "post",
       data: JSON.stringify({"keywords" : data.results[0].result.tag.classes}),
       contentType : "application/json; charset=utf-8"
