@@ -19,9 +19,9 @@ except IOError as e:
 #ngrams
 try:
     with open(os.path.join(PATH, 'coca/short.txt')) as fin:
-        ngrams = json.load(fin)
+        ngrams = [line.split(' ') for line in json.load(fin)]
 except IOError as e:
-    print('ngram_pos_map.json not found -- please generate with clean_grams.py')
+    print('short.txt not found -- please generate with clean_grams.py')
     sys.exit(1)
 
 def wan_walk(seed, steps=3):
@@ -43,7 +43,7 @@ def get_associations(seed, size=8):
 
 def get_ngram(word):
     """Returns an ngram which contains the given word."""
-    candidates = [g for g in ngrams if word in set(g.split(' '))]
+    candidates = [" ".join(g) for g in ngrams if word in g]
     return sample(candidates, 1)[0]
 
 def match(seed, words):
