@@ -10,6 +10,7 @@ w5c.zip
 
 #generated files
 *.json
+*.pyc
 
 # Folder view configuration files
 .DS_Store
