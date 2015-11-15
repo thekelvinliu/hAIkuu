@@ -50,7 +50,7 @@ var createHaikuURL = function () {
     $("#loading").show();
     $("#haiku").empty();
     $.ajax({
-          headers: {authorization: "Bearer brwV2MxCkjH7J5Jai8gZ8JaxIHCdWT"},
+          headers: {authorization: "Bearer 1FKHZmlzAU1dzVn95oiaHcFFV1TI07"},
           url: "https://api.clarifai.com/v1/tag?url=" + $("#url").val(),
           type: "get"
         })
