@@ -1,4 +1,5 @@
 var wordlist = null;
+var token = "1FKHZmlzAU1dzVn95oiaHcFFV1TI07"
 
 $( document ).ready(function() {
     hideuploads();
@@ -50,7 +51,7 @@ var createHaikuURL = function () {
     $("#loading").show();
     $("#haiku").empty();
     $.ajax({
-          headers: {authorization: "Bearer 1FKHZmlzAU1dzVn95oiaHcFFV1TI07"},
+          headers: {authorization: "Bearer " + token},
           url: "https://api.clarifai.com/v1/tag?url=" + $("#url").val(),
           type: "get"
         })
@@ -74,7 +75,7 @@ var createHaiku = function(blob_url) {
         convertToDataURLviaCanvas(blob_url, function(base64Img){
             // Base64DataURL
             $.ajax({
-              headers: {authorization: "Bearer brwV2MxCkjH7J5Jai8gZ8JaxIHCdWT"},
+              headers: {authorization: "Bearer " + token},
               url: "https://api.clarifai.com/v1/tag",
               type: "post",
               data: {encoded_image:base64Img.substring(base64Img.indexOf(",") + 1)}
