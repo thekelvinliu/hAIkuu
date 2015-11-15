@@ -13,6 +13,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/hgen')
+def hgen():
+    return render_template('hgen.html')
+
 @app.route('/haiku', methods=['GET', 'POST'])
 def haiku():
     if request.method == 'POST':

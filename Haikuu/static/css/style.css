@@ -232,7 +232,7 @@ q + .img {
 }
 .parallax02 {
   background-color: #FFF;
-  background-image: url(../images/parallax02.jpg);
+  background-image: url(/static/img/parallax02.jpg);
   padding: 78px 0 106px;
 }
 @media (max-width: 767px) {
