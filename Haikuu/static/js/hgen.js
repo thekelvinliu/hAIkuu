@@ -97,7 +97,7 @@ var generateHaiku = function () {
       contentType : "application/json; charset=utf-8"
     })
     .success(function (data) {
-        $("#haiku").html(data.split('/').join("<br />"));
+        $("#haiku").html("<h2>" + data.split('/').join(", <br />") + "</h2>");
         $("#loading").hide();
     })
 }
