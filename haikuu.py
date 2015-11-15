@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+from os import environ
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -31,4 +32,4 @@ def page_not_found(e):
 
 if __name__ == '__main__':
     app.debug = False
-    app.run(host='0.0.0.0', port=80)
+    app.run(environ.get('SERVER', 'localhost'), environ.get('PORT', 5000))
