@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Twenty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/user.css') }}">
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body class="index">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">Home</a></li>
+							<li class="submenu">
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+
+						<header>
+							<h2>Start Here</h2>
+                                                        
+                                                </header></br>
+                                            Upload an image, enter an image URL,</br> or use your own keyword below.
+
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+                                            
+                                            <h1><b>Upload Image</b>
+                                                <img id="outputImage" style="display:none;"></img> </h1>
+                                                <input id="inputImage" type="file" accept="image/*" capture="camera"></input> 
+                                                
+                                                <h1><b>Enter Image URL</b></h1>
+                            <input id="url" type="text" placeholder="enter image URL here">
+                            <ul class="buttons vertical"> <li><button id ="useURL" type = "button" class="button fit scrolly">Use URL</a></li> </ul>
+                                        </header>
+                            <div id="haiku"></div>
+
+					<!-- One -->
+						<section class="wrapper style2 container special-alt">
+							<div class="row 50%">
+								<div class="8u 12u(narrower)">
+
+									<header>
+										<h2>Behold the <strong>icons</strong> that visualize what you’re all about. or just take up space. your call bro.</h2>
+									</header>
+									<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu comteger ut fermentum lorem. Lorem ipsum dolor sit amet. Sed tristique purus vitae volutpat ultrices. eu elit eget commodo. Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo.</p>
+									<footer>
+										<ul class="buttons">
+											<li><a href="#" class="button">Find Out More</a></li>
+										</ul>
+									</footer>
+
+								</div>
+								<div class="4u 12u(narrower) important(narrower)">
+                                                                    <ul class="buttons vertical"> <li><button id ="generate" type = "button" class="button fit scrolly">Generate Haiku</a></li> </ul>
+
+								</div>
+							</div>
+						</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+						<li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dropotron.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.scrolly.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.scrollgress.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/skel.min.js) }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/util.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+
+	</body>
+</html>

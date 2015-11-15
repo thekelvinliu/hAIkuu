@@ -17,6 +17,10 @@
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-migrate-1.2.1.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/device.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.rd-parallax.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.mousewheel.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.simplr.smoothscroll.min.js') }}"></script>
+
     </head>
     <body>
         <script type="text/javascript" src="{{ url_for('static', filename='js/facebook.js') }}"></script>
@@ -36,13 +40,7 @@
                         <h2 class = "lander">Never Have Dull Captions Again.</h2><br>
                         <p class = "lander"> <em>AI, NLP, and Computer Vision to Generate Haikus.</em></p>
                         <div class="row">
-                            <img id="outputImage" style="display:none;"></img>
-                            <input id="inputImage" type="file" accept="image/*" capture="camera"></input>
-                            <input id="url" type="text">
-                            <button id="useURL" type="button" class="btn btn-default btn-sm">Use Url</button>
-                            <img id="loading" style="display:none;" src="{{ url_for('static', filename='img/loading.gif') }}"></img>
-                            <button id="generate" type="button" class="btn btn-default btn-lg">Generate Haiku</button>
-                            <div id="haiku"></div>
+                            <a class='html5button' href='hgen.html'>Get Started</a>
                             </div>
                         </div>
                     </div>

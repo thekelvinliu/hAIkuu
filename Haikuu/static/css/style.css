@@ -264,6 +264,7 @@ q + .img {
 .lander {
   position: relative;
   display: inline-block;
+  color: #ffffff;
   font-family: 'Raleway', sans-serif;
   font-size: 60px;
   line-height: 60px;
@@ -510,3 +511,22 @@ footer {
   text-transform: uppercase;
   margin: 0;
 }
+/*================= Other stuff =======================*/
+.html5button {
+  display: inline-block;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition-property: color, background-color;
+  transition-duration: .25s;
+  background-color: rgba(1,1,1,0);
+}
+
+.html5button:hover {
+  color: #ffffff;
+  background-color: #909086;
+
