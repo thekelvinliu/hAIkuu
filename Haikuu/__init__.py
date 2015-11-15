@@ -5,7 +5,7 @@ from os import environ
 from flask import Flask
 from flask import render_template
 from flask import request
-import Haikuu.data
+# import Haikuu.data
 
 app = Flask(__name__)
 
