@@ -13,4 +13,3 @@ $ ./runserver.py
 from the root project directory.
 Then, open a web browser and nagivate to `http://localhost:5000`.
 Have fun!
-hishahn
