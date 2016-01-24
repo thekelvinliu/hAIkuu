@@ -1,17 +1,3 @@
-#coca files
-w2c.txt
-w2c.zip
-w3c.txt
-w3c.zip
-w4c.txt
-w4c.zip
-w5c.txt
-w5c.zip
-
-#generated files
-*.json
-*.pyc
-
 # Folder view configuration files
 .DS_Store
 Desktop.ini
@@ -20,4 +6,17 @@ Desktop.ini
 ._*
 Thumbs.db
 
-Haikuu/templates/hAIkuu.R
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Python files
+*.pyc
+venv
+
+#wans fies
+*.json
+downloads
+
+#coca files
+*.zip
