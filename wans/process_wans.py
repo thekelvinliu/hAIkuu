@@ -8,7 +8,7 @@ import os.path
 DL_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'downloads')
 #full path to output file
 OUTPUT_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                           'cue_targets_mapping.json')
+                           '../Haikuu/cue_targets_mapping.json')
 
 #eventual 'json' object
 data = {}
