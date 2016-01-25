@@ -10,7 +10,7 @@ DL_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'downloads')
 OUTPUT_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)),
                            '../Haikuu/cue_targets_mapping.json')
 
-#eventual 'json' object
+#eventual json object
 data = {}
 #iterate over all text files and add to data dict
 for f in listdir(DL_DIR):
