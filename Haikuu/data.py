@@ -7,13 +7,13 @@ import random
 import sys
 
 #absolute path to root Haikuu package
-P_DIR = os.path.dirname(os.path.realpath(__file__))
+DIR = os.path.dirname(os.path.realpath(__file__))
 GRAPH_FILE = 'cue_targets_mapping.json'
 NGRAM_FILE = 'clean_ngrams.json'
 
 #load word graph
 try:
-    with open(os.path.join(P_DIR, GRAPH_FILE)) as fin:
+    with open(os.path.join(DIR, GRAPH_FILE)) as fin:
         word_graph = json.load(fin)
         print(GRAPH_FILE, "loaded!")
 except IOError as e:
@@ -22,7 +22,7 @@ except IOError as e:
 
 #load ngrams
 try:
-    with open(os.path.join(P_DIR, NGRAM_FILE)) as fin:
+    with open(os.path.join(DIR, NGRAM_FILE)) as fin:
         ngrams = json.load(fin)
         for i in range(len(ngrams)):
             ngrams[i].append(set(ngrams[i][0].split(' ')))
