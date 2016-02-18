@@ -8,7 +8,7 @@ import os.path
 DL_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'downloads')
 #full path to output file
 OUTPUT_FILE = os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                           '../Haikuu/clean_ngrams.json')
+                           'clean_ngrams.json')
 
 #eventual json object
 data = []
@@ -19,7 +19,7 @@ for f in listdir(DL_DIR):
     print("cleaning", f)
     with open(os.path.join(DL_DIR, f)) as fin:
         for i, line in enumerate(fin):
-            lst = line.strip().lower().split('\t')[1:]
+            lst = line.strip().split('\t')[1:]
             k = " ".join(lst[:split])
             v = lst[split:]
             data.append([k, v[0], v[-1]])
