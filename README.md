@@ -22,3 +22,6 @@ This is a reimplementation of a previous project created by Henry Du, Kelvin Liu
 The project originated as a hackathon hack at [HackHarvard2015](http://hackharvard2015.devpost.com/).
 Check out the `hackharvard2015-save` branch to see what was demoed.
 This reimplementation has heavier focus on the haiku generation algorithm.
+
+
+template from [html5up](http://html5up.net/)
