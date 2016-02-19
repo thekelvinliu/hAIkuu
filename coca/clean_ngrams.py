@@ -23,6 +23,9 @@ def main():
     split = 2
     #iterate over all text files and add to data dict
     for f in listdir(DL_DIR):
+        #only process text files
+        if not f.endswith('.txt'):
+            continue
         print("cleaning", f)
         with open(os.path.join(DL_DIR, f)) as fin:
             for i, line in enumerate(fin):
