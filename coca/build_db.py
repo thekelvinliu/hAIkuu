@@ -49,7 +49,7 @@ except IOError as e:
     sys.exit(1)
 
 #create connection to sqlite database
-conn = sqlite3.connect(DB_NAME)
+conn = sqlite3.connect(DB_FILE)
 conn.row_factory = sqlite3.Row
 cur = conn.cursor()
 
@@ -79,3 +79,5 @@ for word in cues.keys():
     cur.execute(CREATE_TABLE.format(word))
     cur.executemany(INSERT_TO_TABLE.format(word), [(i,) for i in cues[word]])
     conn.commit()
+print('all done!')
+print('sqlite database at', DB_FILE)
