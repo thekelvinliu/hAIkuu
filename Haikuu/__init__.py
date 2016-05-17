@@ -22,15 +22,21 @@ def get_db():
     return db
 
 @app.teardown_appcontext
-def close_connection(exception):
+def close_connection(e):
     db = getattr(g, '_database', None)
     if db is not None:
         db.close()
 
 @app.route('/')
-def index():
+def random_word():
     cur = get_db().cursor()
     return data.generate_random(cur)
+
+@app.route('/<word>')
+def specific_word(word):
+    cur = get_db().cursor()
+    haiku = data.generate(word, cur)
+    return haiku if haiku is not None else 'Unable to generate haiku :('
 
 @app.errorhandler(404)
 def page_not_found(e):
